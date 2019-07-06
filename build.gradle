@@ -1,0 +1,41 @@
+buildscript {
+
+	ext['hibernate.version'] = '5.2.8.Final'
+
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.21.RELEASE'
+	}
+}
+
+plugins {
+	id 'java'
+}
+
+apply plugin: 'org.springframework.boot'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.springframework.boot:spring-boot-starter-security'
+	compile 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4'
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+	compile('es.nitaur.markdown:txtmark:0.16')
+	compile 'net.java.dev.jna:jna:4.3.0'
+	compile 'mysql:mysql-connector-java:8.0.11'
+	compile 'org.apache.commons:commons-lang3:3.5'
+	runtime('com.h2database:h2:1.4.193')
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
